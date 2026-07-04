@@ -7,7 +7,7 @@ from datetime import datetime
 from itertools import combinations
 
 # ---------- 配置 ----------
-DATA_FILE = r"D:\chill_data\IEEE-Transactions-LaTeX2e-templates-and-instructions\sucai\all_votes.csv"   # 累积存储所有用户的数据
+DATA_FILE = "./all_votes.csv"   # 累积存储所有用户的数据
 ADMIN_PASSWORD = "admin123"
 
 st.set_page_config(page_title="三视频对比投票", layout="wide")
@@ -31,7 +31,7 @@ st.markdown("""
 # ---------- 初始化 session_state ----------
 def init_state():
     if "videos" not in st.session_state:
-        video_folder = r"D:\chill_data\IEEE-Transactions-LaTeX2e-templates-and-instructions\sucai\depoly"
+        video_folder = "./video"
         if not os.path.exists(video_folder):
             os.makedirs(video_folder, exist_ok=True)
             st.warning(f"请将视频文件放入 `{video_folder}` 文件夹")
